@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		A91EA6D329A661850090B0BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA6D229A661850090B0BB /* AppDelegate.swift */; };
 		A91EA6D529A661850090B0BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA6D429A661850090B0BB /* SceneDelegate.swift */; };
-		A91EA6D729A661850090B0BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA6D629A661850090B0BB /* ViewController.swift */; };
+		A91EA6D729A661850090B0BB /* MovieHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA6D629A661850090B0BB /* MovieHomeController.swift */; };
 		A91EA6DA29A661850090B0BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A91EA6D829A661850090B0BB /* Main.storyboard */; };
 		A91EA6DC29A661860090B0BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A91EA6DB29A661860090B0BB /* Assets.xcassets */; };
 		A91EA6DF29A661860090B0BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A91EA6DD29A661860090B0BB /* LaunchScreen.storyboard */; };
 		A91EA6EA29A661860090B0BB /* MVVM_MovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA6E929A661860090B0BB /* MVVM_MovieTests.swift */; };
 		A91EA6F429A661860090B0BB /* MVVM_MovieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA6F329A661860090B0BB /* MVVM_MovieUITests.swift */; };
 		A91EA6F629A661860090B0BB /* MVVM_MovieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA6F529A661860090B0BB /* MVVM_MovieUITestsLaunchTests.swift */; };
+		A91EA71029A6660B0090B0BB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A91EA70F29A6660B0090B0BB /* Kingfisher */; };
+		A91EA71229A668D80090B0BB /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA71129A668D80090B0BB /* MovieModel.swift */; };
+		A91EA71429A67C620090B0BB /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA71329A67C620090B0BB /* ServiceManager.swift */; };
+		A91EA71729A73D490090B0BB /* MovieHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA71629A73D490090B0BB /* MovieHomeCell.swift */; };
+		A91EA71929A782060090B0BB /* MovieListModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA71829A782060090B0BB /* MovieListModelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +44,7 @@
 		A91EA6CF29A661850090B0BB /* MVVM Movie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM Movie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A91EA6D229A661850090B0BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A91EA6D429A661850090B0BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A91EA6D629A661850090B0BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A91EA6D629A661850090B0BB /* MovieHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeController.swift; sourceTree = "<group>"; };
 		A91EA6D929A661850090B0BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A91EA6DB29A661860090B0BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A91EA6DE29A661860090B0BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +54,10 @@
 		A91EA6EF29A661860090B0BB /* MVVM MovieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVVM MovieUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A91EA6F329A661860090B0BB /* MVVM_MovieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_MovieUITests.swift; sourceTree = "<group>"; };
 		A91EA6F529A661860090B0BB /* MVVM_MovieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_MovieUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A91EA71129A668D80090B0BB /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		A91EA71329A67C620090B0BB /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		A91EA71629A73D490090B0BB /* MovieHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeCell.swift; sourceTree = "<group>"; };
+		A91EA71829A782060090B0BB /* MovieListModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListModelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A91EA71029A6660B0090B0BB /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +109,13 @@
 		A91EA6D129A661850090B0BB /* MVVM Movie */ = {
 			isa = PBXGroup;
 			children = (
-				A91EA6D229A661850090B0BB /* AppDelegate.swift */,
-				A91EA6D429A661850090B0BB /* SceneDelegate.swift */,
-				A91EA6D629A661850090B0BB /* ViewController.swift */,
+				A91EA70829A664740090B0BB /* Service */,
+				A91EA70B29A664FE0090B0BB /* Model */,
+				A91EA70629A6622E0090B0BB /* Resources */,
+				A91EA70329A662080090B0BB /* View */,
+				A91EA71529A73CA90090B0BB /* ModelView */,
 				A91EA6D829A661850090B0BB /* Main.storyboard */,
-				A91EA6DB29A661860090B0BB /* Assets.xcassets */,
-				A91EA6DD29A661860090B0BB /* LaunchScreen.storyboard */,
-				A91EA6E029A661860090B0BB /* Info.plist */,
+				A91EA70729A6624B0090B0BB /* Support */,
 			);
 			path = "MVVM Movie";
 			sourceTree = "<group>";
@@ -127,6 +137,58 @@
 			path = "MVVM MovieUITests";
 			sourceTree = "<group>";
 		};
+		A91EA70329A662080090B0BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A91EA6D629A661850090B0BB /* MovieHomeController.swift */,
+				A91EA71629A73D490090B0BB /* MovieHomeCell.swift */,
+				A91EA6D229A661850090B0BB /* AppDelegate.swift */,
+				A91EA6D429A661850090B0BB /* SceneDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A91EA70629A6622E0090B0BB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A91EA6DB29A661860090B0BB /* Assets.xcassets */,
+				A91EA6DD29A661860090B0BB /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A91EA70729A6624B0090B0BB /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				A91EA6E029A661860090B0BB /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		A91EA70829A664740090B0BB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A91EA71329A67C620090B0BB /* ServiceManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A91EA70B29A664FE0090B0BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A91EA71129A668D80090B0BB /* MovieModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A91EA71529A73CA90090B0BB /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				A91EA71829A782060090B0BB /* MovieListModelView.swift */,
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +205,9 @@
 			dependencies = (
 			);
 			name = "MVVM Movie";
+			packageProductDependencies = (
+				A91EA70F29A6660B0090B0BB /* Kingfisher */,
+			);
 			productName = "MVVM Movie";
 			productReference = A91EA6CF29A661850090B0BB /* MVVM Movie.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +280,9 @@
 				Base,
 			);
 			mainGroup = A91EA6C629A661850090B0BB;
+			packageReferences = (
+				A91EA70E29A6660B0090B0BB /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = A91EA6D029A661850090B0BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,9 +326,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A91EA6D729A661850090B0BB /* ViewController.swift in Sources */,
+				A91EA71229A668D80090B0BB /* MovieModel.swift in Sources */,
+				A91EA71729A73D490090B0BB /* MovieHomeCell.swift in Sources */,
+				A91EA6D729A661850090B0BB /* MovieHomeController.swift in Sources */,
 				A91EA6D329A661850090B0BB /* AppDelegate.swift in Sources */,
 				A91EA6D529A661850090B0BB /* SceneDelegate.swift in Sources */,
+				A91EA71429A67C620090B0BB /* ServiceManager.swift in Sources */,
+				A91EA71929A782060090B0BB /* MovieListModelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,12 +511,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5D27LBTNA4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "MVVM Movie/Info.plist";
+				INFOPLIST_FILE = "MVVM Movie/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,9 +525,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Halil-Dikisli.MVVM-Movie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -467,12 +543,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5D27LBTNA4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "MVVM Movie/Info.plist";
+				INFOPLIST_FILE = "MVVM Movie/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -480,9 +557,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Halil-Dikisli.MVVM-Movie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -602,6 +682,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A91EA70E29A6660B0090B0BB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A91EA70F29A6660B0090B0BB /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A91EA70E29A6660B0090B0BB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A91EA6C729A661850090B0BB /* Project object */;
 }
