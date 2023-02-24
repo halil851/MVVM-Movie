@@ -7,11 +7,11 @@
 
 import UIKit
 
-class MovieHomeController: UIViewController {
+final class MovieHomeController: UIViewController {
     
-    private var movieListModelView: MovieListModelView!
+    private var movieListViewModel: MovieListViewModel!
     
-    var serviceManager = ServiceManager()
+    private var serviceManager = ServiceManager()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,10 +23,9 @@ class MovieHomeController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
     }
     
-    func callData() {
+    private func callData() {
         let url = "https://api.themoviedb.org/3/discover/movie?api_key=959290cac471832e085651c9a892dec9"
         serviceManager.performRequest(with: url)
         
@@ -38,23 +37,23 @@ class MovieHomeController: UIViewController {
 
 
 extension MovieHomeController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath)
-        let movie = movieListModelView.movieList[indexPath.row]
-        cell.textLabel?.text = movie.title
-        
-        
-        /* var content = cell.defaultContentConfiguration()
-         content.text = "sada"
-         cell.contentConfiguration = content */
-        
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as? MovieHomeCell else {
+            print("An error occur at cell")
+            return UITableViewCell()
+        }
+        let movie = movieListViewModel.movieList[indexPath.row]
+        var content = cell.defaultContentConfiguration()
+        content.text = movie.title
+        cell.contentConfiguration = content
+//        tableView.rowHeight = 200
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return movieListModelView == nil ? 0 : movieListModelView.numberOfRowsInSection()
+        return movieListViewModel == nil ? 0 : movieListViewModel.numberOfRowsInSection()
     }
     
     
@@ -63,7 +62,7 @@ extension MovieHomeController: UITableViewDelegate, UITableViewDataSource {
 extension MovieHomeController: ServiceManagerDelegate{
     func getData(movie: [Result]) {
         
-        movieListModelView = MovieListModelView(movieList: movie)
+        movieListViewModel = MovieListViewModel(movieList: movie)
         
         DispatchQueue.main.async {
             self.tableView.reloadData()

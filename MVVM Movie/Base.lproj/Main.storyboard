@@ -17,28 +17,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="06F-8g-5Li">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="06F-8g-5Li">
+                                <rect key="frame" x="0.0" y="119" width="393" height="699"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeCell" id="7so-23-PSj">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeCell" id="7so-23-PSj" customClass="MovieHomeCell" customModule="MVVM_Movie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7so-23-PSj" id="ek5-qD-WnQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C7O-hJ-R97">
+                                <rect key="frame" x="0.0" y="59" width="393" height="60"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lT-Ml-K59" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FUp-Fi-ccl">
+                                                <rect key="frame" x="0.0" y="10" width="600" height="31"/>
+                                                <segments>
+                                                    <segment title="First"/>
+                                                    <segment title="Second"/>
+                                                    <segment title=""/>
+                                                    <segment title=""/>
+                                                    <segment title=""/>
+                                                    <segment title=""/>
+                                                </segments>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="FUp-Fi-ccl" firstAttribute="top" secondItem="9lT-Ml-K59" secondAttribute="top" constant="10" id="LIi-ax-5dG"/>
+                                            <constraint firstItem="FUp-Fi-ccl" firstAttribute="leading" secondItem="9lT-Ml-K59" secondAttribute="leading" id="ZUr-pX-aNQ"/>
+                                            <constraint firstItem="FUp-Fi-ccl" firstAttribute="height" secondItem="9lT-Ml-K59" secondAttribute="height" multiplier="0.5" id="gZP-j2-T2L"/>
+                                            <constraint firstAttribute="trailing" secondItem="FUp-Fi-ccl" secondAttribute="trailing" id="sA1-Ou-ojE"/>
+                                            <constraint firstAttribute="width" constant="600" id="uoB-Xt-bFK"/>
+                                            <constraint firstItem="FUp-Fi-ccl" firstAttribute="width" secondItem="9lT-Ml-K59" secondAttribute="width" id="zfk-dH-TRY"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="9lT-Ml-K59" secondAttribute="bottom" id="Fre-CM-Brg"/>
+                                    <constraint firstItem="9lT-Ml-K59" firstAttribute="top" secondItem="C7O-hJ-R97" secondAttribute="top" id="Y32-rA-oFw"/>
+                                    <constraint firstAttribute="trailing" secondItem="9lT-Ml-K59" secondAttribute="trailing" id="rYX-F8-c2C"/>
+                                    <constraint firstItem="9lT-Ml-K59" firstAttribute="leading" secondItem="C7O-hJ-R97" secondAttribute="leading" id="xaI-a0-MSF"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="06F-8g-5Li" secondAttribute="bottom" id="B7a-Zp-Sfr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="06F-8g-5Li" secondAttribute="trailing" id="Qf1-cu-5Hn"/>
-                            <constraint firstItem="06F-8g-5Li" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RGX-lE-SEH"/>
-                            <constraint firstItem="06F-8g-5Li" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pMv-s7-WtO"/>
+                            <constraint firstItem="06F-8g-5Li" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EhA-Ao-kQF"/>
+                            <constraint firstItem="06F-8g-5Li" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GTo-bz-CA1"/>
+                            <constraint firstItem="06F-8g-5Li" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.920949" id="Ote-Lr-QyW"/>
+                            <constraint firstItem="C7O-hJ-R97" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VNx-JD-h7u"/>
+                            <constraint firstAttribute="trailing" secondItem="06F-8g-5Li" secondAttribute="trailing" id="VxX-DQ-5f1"/>
+                            <constraint firstItem="C7O-hJ-R97" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aQ1-50-ui3"/>
+                            <constraint firstItem="9lT-Ml-K59" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.0790514" id="adr-Qw-R6e"/>
+                            <constraint firstItem="C7O-hJ-R97" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.0790514" id="hIy-aO-4fQ"/>
+                            <constraint firstItem="C7O-hJ-R97" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lcQ-q9-VGL"/>
                         </constraints>
                     </view>
                     <connections>
@@ -47,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="129.00763358778624" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>

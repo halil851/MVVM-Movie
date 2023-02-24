@@ -37,18 +37,10 @@ struct ServiceManager {
             }
             
             if let safeMovie = self.parseJSON(safeData){
-                
-                delegate?.getData(movie: safeMovie)
-                
+                delegate?.getData(movie: safeMovie)  
             }
-            
-            
-            
-            
-            
         }
         task.resume()
-        
     }
     
     

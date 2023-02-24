@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MovieListModelView {
+struct MovieListViewModel {
     let movieList: [Result]
     
     func numberOfRowsInSection() -> Int {
