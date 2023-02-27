@@ -8,35 +8,59 @@
 import Foundation
 
 struct MovieListViewModel {
-    let movieList: [Result]
+    let movieList: [MovieViewModel]
     
     func numberOfRowsInSection() -> Int {
         return movieList.count
     }
-    /*
-    func movieAtIndex(_ index: Int) -> MovieViewModel{
-        let movie = movieList[index]
-        return MovieViewModel(movie: movie)
-    }
-    */
+    
+//     func movieAtIndex(_ index: Int) -> MovieViewModel{
+//     let movie = movieList[index]
+//         return MovieListViewModel(movies: movie)
+//     }
+     
 }
 
 struct MovieViewModel {
-    let movie: Result
+    let title: String
+    let id: Int
+    let posterPath: String
+    let releaseDate: String
+    let overview: String
+    let voteAverage: Double
     
-    var title: String {
-        return movie.title
-    }
     
-    var overview: String {
-        return movie.overview
-    }
     
-    var posterPath: String {
-        return movie.poster_path
-    }
     
-    var voteAverage: Double {
-        return movie.vote_average
-    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+       /* var title: String {
+            guard let movieTitle = movies.title else {return movies.name ?? ""}
+            return movieTitle
+            
+        }
+        
+        var overview: String {
+            return movies.overview
+        }
+        
+        var posterPath: String {
+            return movies.poster_path
+        }
+        
+        var voteAverage: Double {
+            return movies.vote_average
+        } */
+    
 }

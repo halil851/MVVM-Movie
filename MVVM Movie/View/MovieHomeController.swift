@@ -7,11 +7,20 @@
 
 import UIKit
 
+enum ResolutionOfImages: String {
+    case low = "w300"
+    case medium = "w500"
+}
+
+
 final class MovieHomeController: UIViewController {
     
-    private var movieListViewModel: MovieListViewModel!
+    @IBOutlet weak var segmentedControlOutlet: UISegmentedControl!
     
+    private var movieListViewModel: MovieListViewModel!
     private var serviceManager = ServiceManager()
+    private var sendOverview = ""
+    private var sendPosterPath = ""
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,20 +28,25 @@ final class MovieHomeController: UIViewController {
         super.viewDidLoad()
         serviceManager.delegate = self
         
-        callData()
+        serviceManager.getDiscoverMovies()
         
         tableView.delegate = self
         tableView.dataSource = self
     }
     
-    private func callData() {
-        let url = "https://api.themoviedb.org/3/discover/movie?api_key=959290cac471832e085651c9a892dec9"
-        serviceManager.performRequest(with: url)
+    
+    @IBAction func segmentedControl(_ sender: UISegmentedControl) {
+        let index = segmentedControlOutlet.selectedSegmentIndex
         
+        switch index {
+        case 0:
+            serviceManager.getDiscoverMovies()
+        case 1:
+            serviceManager.getDiscoverTVs()
+        default:
+            serviceManager.getDiscoverTVs()
+        }
     }
-    
-    
-    
 }
 
 
@@ -43,24 +57,47 @@ extension MovieHomeController: UITableViewDelegate, UITableViewDataSource {
             print("An error occur at cell")
             return UITableViewCell()
         }
+        
         let movie = movieListViewModel.movieList[indexPath.row]
-        var content = cell.defaultContentConfiguration()
-        content.text = movie.title
-        cell.contentConfiguration = content
-//        tableView.rowHeight = 200
+        cell.movieNameLabel.text = movie.title
+        cell.releasedDate.text = movie.releaseDate
+        cell.voteAverage.text = "Vote Average: \(movie.voteAverage)"
+        
+        
+        serviceManager.getImages(with: movie.posterPath, to: cell.moviePoster, resolution: .low)
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return movieListViewModel == nil ? 0 : movieListViewModel.numberOfRowsInSection()
+        return movieListViewModel == nil ? 0 : movieListViewModel.movieList.count
+        
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        sendOverview = movieListViewModel.movieList[indexPath.row].overview
+        sendPosterPath = movieListViewModel.movieList[indexPath.row].posterPath
+        
+        performSegue(withIdentifier: "overview", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "overview" {
+            guard let destinationVC = segue.destination as? OverviewVC else {return}
+            destinationVC.overview = sendOverview
+            destinationVC.posterPath = sendPosterPath
+        }
+    }
     
 }
 
+
+
 extension MovieHomeController: ServiceManagerDelegate{
-    func getData(movie: [Result]) {
+    internal func getData(movie: [MovieViewModel]) {
         
         movieListViewModel = MovieListViewModel(movieList: movie)
         
@@ -69,8 +106,6 @@ extension MovieHomeController: ServiceManagerDelegate{
         }
         
     }
-    
-    
     
 }
 
