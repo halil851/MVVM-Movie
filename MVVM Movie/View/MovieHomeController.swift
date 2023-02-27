@@ -7,10 +7,6 @@
 
 import UIKit
 
-enum ResolutionOfImages: String {
-    case low = "w300"
-    case medium = "w500"
-}
 
 final class MovieHomeController: UIViewController {
     
@@ -53,7 +49,7 @@ final class MovieHomeController: UIViewController {
             scrollView.contentOffset = CGPoint(x: 140, y: 0)
             serviceManager.getTopRatedMovies()
         case 3:
-            scrollView.contentOffset = CGPoint(x: 200, y: 0)
+            scrollView.contentOffset = CGPoint(x: 250, y: 0)
             serviceManager.getTopRatedTV()
         default:
             print("")

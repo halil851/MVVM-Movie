@@ -29,3 +29,9 @@ extension UIImageView {
 }
 
 
+enum ResolutionOfImages: String {
+    case low = "w300"
+    case medium = "w500"
+}
+
+

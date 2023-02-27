@@ -20,7 +20,7 @@
 		A91EA71429A67C620090B0BB /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA71329A67C620090B0BB /* ServiceManager.swift */; };
 		A91EA71729A73D490090B0BB /* MovieHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA71629A73D490090B0BB /* MovieHomeCell.swift */; };
 		A91EA71929A782060090B0BB /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA71829A782060090B0BB /* MovieListViewModel.swift */; };
-		A9D0696329A8E6E2006D5432 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0696229A8E6E2006D5432 /* Extensions.swift */; };
+		A9D0696329A8E6E2006D5432 /* ExtensionsAndEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0696229A8E6E2006D5432 /* ExtensionsAndEnum.swift */; };
 		A9D0696729ACD319006D5432 /* OverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0696629ACD319006D5432 /* OverviewVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +59,7 @@
 		A91EA71329A67C620090B0BB /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		A91EA71629A73D490090B0BB /* MovieHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeCell.swift; sourceTree = "<group>"; };
 		A91EA71829A782060090B0BB /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
-		A9D0696229A8E6E2006D5432 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A9D0696229A8E6E2006D5432 /* ExtensionsAndEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsAndEnum.swift; sourceTree = "<group>"; };
 		A9D0696629ACD319006D5432 /* OverviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,7 +196,7 @@
 		A9D0696129A8E6D4006D5432 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A9D0696229A8E6E2006D5432 /* Extensions.swift */,
+				A9D0696229A8E6E2006D5432 /* ExtensionsAndEnum.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -340,7 +340,7 @@
 				A9D0696729ACD319006D5432 /* OverviewVC.swift in Sources */,
 				A91EA71729A73D490090B0BB /* MovieHomeCell.swift in Sources */,
 				A91EA6D729A661850090B0BB /* MovieHomeController.swift in Sources */,
-				A9D0696329A8E6E2006D5432 /* Extensions.swift in Sources */,
+				A9D0696329A8E6E2006D5432 /* ExtensionsAndEnum.swift in Sources */,
 				A91EA6D329A661850090B0BB /* AppDelegate.swift in Sources */,
 				A91EA6D529A661850090B0BB /* SceneDelegate.swift in Sources */,
 				A91EA71429A67C620090B0BB /* ServiceManager.swift in Sources */,
