@@ -16,7 +16,6 @@
 		A91EA6EA29A661860090B0BB /* MVVM_MovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA6E929A661860090B0BB /* MVVM_MovieTests.swift */; };
 		A91EA6F429A661860090B0BB /* MVVM_MovieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA6F329A661860090B0BB /* MVVM_MovieUITests.swift */; };
 		A91EA6F629A661860090B0BB /* MVVM_MovieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA6F529A661860090B0BB /* MVVM_MovieUITestsLaunchTests.swift */; };
-		A91EA71029A6660B0090B0BB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A91EA70F29A6660B0090B0BB /* Kingfisher */; };
 		A91EA71229A668D80090B0BB /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA71129A668D80090B0BB /* MovieModel.swift */; };
 		A91EA71429A67C620090B0BB /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA71329A67C620090B0BB /* ServiceManager.swift */; };
 		A91EA71729A73D490090B0BB /* MovieHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91EA71629A73D490090B0BB /* MovieHomeCell.swift */; };
@@ -69,7 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A91EA71029A6660B0090B0BB /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +218,6 @@
 			);
 			name = "MVVM Movie";
 			packageProductDependencies = (
-				A91EA70F29A6660B0090B0BB /* Kingfisher */,
 			);
 			productName = "MVVM Movie";
 			productReference = A91EA6CF29A661850090B0BB /* MVVM Movie.app */;
@@ -709,14 +706,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A91EA70F29A6660B0090B0BB /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A91EA70E29A6660B0090B0BB /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A91EA6C729A661850090B0BB /* Project object */;
 }

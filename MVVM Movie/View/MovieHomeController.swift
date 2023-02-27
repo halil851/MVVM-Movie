@@ -19,8 +19,8 @@ final class MovieHomeController: UIViewController {
     
     private var movieListViewModel: MovieListViewModel!
     private var serviceManager = ServiceManager()
-    private var sendOverview = ""
-    private var sendPosterPath = ""
+    private var sendOverview = String()
+    private var sendPosterPath = String()
     
     @IBOutlet weak var tableView: UITableView!
     
