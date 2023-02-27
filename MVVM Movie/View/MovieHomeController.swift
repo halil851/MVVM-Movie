@@ -12,10 +12,10 @@ enum ResolutionOfImages: String {
     case medium = "w500"
 }
 
-
 final class MovieHomeController: UIViewController {
     
     @IBOutlet weak var segmentedControlOutlet: UISegmentedControl!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     private var movieListViewModel: MovieListViewModel!
     private var serviceManager = ServiceManager()
@@ -27,6 +27,10 @@ final class MovieHomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         serviceManager.delegate = self
+        
+        if let boldFont = UIFont(name: "Helvetica-Bold", size: 16.0){
+            segmentedControlOutlet.setTitleTextAttributes([NSAttributedString.Key.font: boldFont], for: .normal)
+        }
         
         serviceManager.getDiscoverMovies()
         
@@ -40,11 +44,19 @@ final class MovieHomeController: UIViewController {
         
         switch index {
         case 0:
+            scrollView.contentOffset = CGPoint(x: 0, y: 0)
             serviceManager.getDiscoverMovies()
         case 1:
+            scrollView.contentOffset = CGPoint(x: 40, y: 0)
             serviceManager.getDiscoverTVs()
+        case 2:
+            scrollView.contentOffset = CGPoint(x: 140, y: 0)
+            serviceManager.getTopRatedMovies()
+        case 3:
+            scrollView.contentOffset = CGPoint(x: 200, y: 0)
+            serviceManager.getTopRatedTV()
         default:
-            serviceManager.getDiscoverTVs()
+            print("")
         }
     }
 }
@@ -63,16 +75,13 @@ extension MovieHomeController: UITableViewDelegate, UITableViewDataSource {
         cell.releasedDate.text = movie.releaseDate
         cell.voteAverage.text = "Vote Average: \(movie.voteAverage)"
         
-        
         serviceManager.getImages(with: movie.posterPath, to: cell.moviePoster, resolution: .low)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return movieListViewModel == nil ? 0 : movieListViewModel.movieList.count
-        
+       return movieListViewModel == nil ? 0 : movieListViewModel.movieList.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -91,10 +100,7 @@ extension MovieHomeController: UITableViewDelegate, UITableViewDataSource {
             destinationVC.posterPath = sendPosterPath
         }
     }
-    
 }
-
-
 
 extension MovieHomeController: ServiceManagerDelegate{
     internal func getData(movie: [MovieViewModel]) {

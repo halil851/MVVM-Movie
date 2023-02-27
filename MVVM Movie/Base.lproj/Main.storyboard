@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="06F-8g-5Li">
-                                <rect key="frame" x="0.0" y="119" width="393" height="699"/>
+                                <rect key="frame" x="0.0" y="108.33333333333331" width="393" height="743.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeCell" id="7so-23-PSj" customClass="MovieHomeCell" customModule="MVVM_Movie" customModuleProvider="target">
@@ -93,15 +93,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lT-Ml-K59" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                         <subviews>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FUp-Fi-ccl">
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FUp-Fi-ccl">
                                                 <rect key="frame" x="0.0" y="10" width="600" height="31"/>
                                                 <segments>
                                                     <segment title="Movie Discover"/>
                                                     <segment title="TV Discover"/>
-                                                    <segment title=""/>
-                                                    <segment title=""/>
-                                                    <segment title=""/>
-                                                    <segment title=""/>
+                                                    <segment title="Movie Top Rated"/>
+                                                    <segment title="TV Top Rated"/>
                                                 </segments>
                                                 <connections>
                                                     <action selector="segmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="fX2-Nn-6eD"/>
@@ -130,9 +128,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="06F-8g-5Li" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EhA-Ao-kQF"/>
+                            <constraint firstItem="06F-8g-5Li" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="EhA-Ao-kQF"/>
                             <constraint firstItem="06F-8g-5Li" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GTo-bz-CA1"/>
-                            <constraint firstItem="06F-8g-5Li" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.920949" id="Ote-Lr-QyW"/>
+                            <constraint firstItem="06F-8g-5Li" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.98" id="Ote-Lr-QyW"/>
                             <constraint firstItem="C7O-hJ-R97" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VNx-JD-h7u"/>
                             <constraint firstAttribute="trailing" secondItem="06F-8g-5Li" secondAttribute="trailing" id="VxX-DQ-5f1"/>
                             <constraint firstItem="C7O-hJ-R97" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aQ1-50-ui3"/>
@@ -142,6 +140,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="scrollView" destination="C7O-hJ-R97" id="AhX-j7-ZUt"/>
                         <outlet property="segmentedControlOutlet" destination="FUp-Fi-ccl" id="q4L-bl-eRH"/>
                         <outlet property="tableView" destination="06F-8g-5Li" id="dsa-Qc-1fU"/>
                         <segue destination="zmX-A1-YOk" kind="show" identifier="overview" id="qmh-uC-ziC"/>
@@ -165,7 +164,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XWu-CQ-nFY">
                                 <rect key="frame" x="16" y="558" width="361" height="205"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <mutableString key="text">Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death.  As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda. Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death.  As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda.</mutableString>
+                                <string key="text">Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death.  As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda. Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death.  As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

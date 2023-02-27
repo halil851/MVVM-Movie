@@ -23,9 +23,18 @@ struct ServiceManager {
         performRequest(with: movieDiscoverURL)
     }
     func getDiscoverTVs() {
-        let TVDiscoverURL = "\(baseURL)/3/discover/tv?api_key=\(APIKEY)"
-        performRequest(with: TVDiscoverURL)
+        let tvDiscoverURL = "\(baseURL)/3/discover/tv?api_key=\(APIKEY)"
+        performRequest(with: tvDiscoverURL)
     }
+    func getTopRatedMovies() {
+        let movieTopRatedURL = "\(baseURL)/3/movie/top_rated?api_key=\(APIKEY)"
+        performRequest(with: movieTopRatedURL)
+    }
+    func getTopRatedTV() {
+        let tvTopRatedURL = "\(baseURL)/3/tv/top_rated?api_key=\(APIKEY)"
+        performRequest(with: tvTopRatedURL)
+    }
+    
     
     
     func performRequest(with url: String) {
