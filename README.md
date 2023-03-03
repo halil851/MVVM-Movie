@@ -6,7 +6,7 @@
     * UIKit
     * Storyboard
     * UISegmentedControl
-    * RestFUL API https://www.themoviedb.org
+    * API from https://www.themoviedb.org
 
 
 ## Screens
