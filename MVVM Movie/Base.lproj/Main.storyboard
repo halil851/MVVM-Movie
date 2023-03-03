@@ -87,33 +87,60 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C7O-hJ-R97">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7O-hJ-R97">
                                 <rect key="frame" x="0.0" y="59" width="393" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lT-Ml-K59" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                         <subviews>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FUp-Fi-ccl">
-                                                <rect key="frame" x="0.0" y="10" width="600" height="31"/>
-                                                <segments>
-                                                    <segment title="Movie Discover"/>
-                                                    <segment title="TV Discover"/>
-                                                    <segment title="Movie Top Rated"/>
-                                                    <segment title="TV Top Rated"/>
-                                                </segments>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="0" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4A-Ye-6gG">
+                                                <rect key="frame" x="0.0" y="12" width="140.33333333333334" height="36"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Movie Discover"/>
                                                 <connections>
-                                                    <action selector="segmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="fX2-Nn-6eD"/>
+                                                    <action selector="buttonsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2yL-8X-FfB"/>
                                                 </connections>
-                                            </segmentedControl>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Bp-Av-hCT">
+                                                <rect key="frame" x="148" y="12" width="116.33333333333331" height="36"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="TV Discover"/>
+                                                <connections>
+                                                    <action selector="buttonsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Bh-LI-qgv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avp-Sb-7Sk">
+                                                <rect key="frame" x="272" y="12" width="152" height="36"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Movie Top Rated"/>
+                                                <connections>
+                                                    <action selector="buttonsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YI3-Bj-WAr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7n-Sd-qcQ">
+                                                <rect key="frame" x="432" y="12" width="127" height="36"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="TV Top Rated"/>
+                                                <connections>
+                                                    <action selector="buttonsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b0f-ov-jh7"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="FUp-Fi-ccl" firstAttribute="top" secondItem="9lT-Ml-K59" secondAttribute="top" constant="10" id="LIi-ax-5dG"/>
-                                            <constraint firstItem="FUp-Fi-ccl" firstAttribute="leading" secondItem="9lT-Ml-K59" secondAttribute="leading" id="ZUr-pX-aNQ"/>
-                                            <constraint firstItem="FUp-Fi-ccl" firstAttribute="height" secondItem="9lT-Ml-K59" secondAttribute="height" multiplier="0.5" id="gZP-j2-T2L"/>
-                                            <constraint firstAttribute="trailing" secondItem="FUp-Fi-ccl" secondAttribute="trailing" id="sA1-Ou-ojE"/>
+                                            <constraint firstAttribute="bottom" secondItem="L7n-Sd-qcQ" secondAttribute="bottom" constant="12" id="8AY-hW-w37"/>
+                                            <constraint firstItem="L7n-Sd-qcQ" firstAttribute="top" secondItem="9lT-Ml-K59" secondAttribute="top" constant="12" id="CGJ-tq-j33"/>
+                                            <constraint firstItem="avp-Sb-7Sk" firstAttribute="leading" secondItem="5Bp-Av-hCT" secondAttribute="trailing" constant="7.6699999999999999" id="Eyj-kn-Qk5"/>
+                                            <constraint firstAttribute="bottom" secondItem="avp-Sb-7Sk" secondAttribute="bottom" constant="12" id="Oi7-Ec-i7I"/>
+                                            <constraint firstItem="avp-Sb-7Sk" firstAttribute="top" secondItem="9lT-Ml-K59" secondAttribute="top" constant="12" id="T3t-gC-g3f"/>
+                                            <constraint firstAttribute="bottom" secondItem="L7n-Sd-qcQ" secondAttribute="bottom" constant="12" id="Tge-lg-ABx"/>
+                                            <constraint firstItem="a4A-Ye-6gG" firstAttribute="leading" secondItem="9lT-Ml-K59" secondAttribute="leading" id="aS5-ep-pfR"/>
+                                            <constraint firstItem="5Bp-Av-hCT" firstAttribute="top" secondItem="9lT-Ml-K59" secondAttribute="top" constant="12" id="cOO-Cb-Oxf"/>
+                                            <constraint firstItem="L7n-Sd-qcQ" firstAttribute="leading" secondItem="avp-Sb-7Sk" secondAttribute="trailing" constant="8" id="doe-Qw-spl"/>
+                                            <constraint firstItem="a4A-Ye-6gG" firstAttribute="top" secondItem="9lT-Ml-K59" secondAttribute="top" constant="12" id="k76-DF-9V9"/>
+                                            <constraint firstAttribute="bottom" secondItem="a4A-Ye-6gG" secondAttribute="bottom" constant="12" id="pat-zd-pDk"/>
+                                            <constraint firstItem="L7n-Sd-qcQ" firstAttribute="top" secondItem="9lT-Ml-K59" secondAttribute="top" constant="12" id="tyX-nq-9rX"/>
                                             <constraint firstAttribute="width" constant="600" id="uoB-Xt-bFK"/>
-                                            <constraint firstItem="FUp-Fi-ccl" firstAttribute="width" secondItem="9lT-Ml-K59" secondAttribute="width" id="zfk-dH-TRY"/>
+                                            <constraint firstItem="5Bp-Av-hCT" firstAttribute="leading" secondItem="a4A-Ye-6gG" secondAttribute="trailing" constant="7.6699999999999999" id="vCX-pn-2x2"/>
+                                            <constraint firstAttribute="bottom" secondItem="5Bp-Av-hCT" secondAttribute="bottom" constant="12" id="ykc-Fb-Ofc"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -140,8 +167,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="button0" destination="a4A-Ye-6gG" id="EWC-p2-HgG"/>
+                        <outlet property="button1" destination="5Bp-Av-hCT" id="KYE-aS-Ogs"/>
+                        <outlet property="button2" destination="avp-Sb-7Sk" id="8bl-Sy-sML"/>
+                        <outlet property="button3" destination="L7n-Sd-qcQ" id="2N8-rZ-h3S"/>
                         <outlet property="scrollView" destination="C7O-hJ-R97" id="AhX-j7-ZUt"/>
-                        <outlet property="segmentedControlOutlet" destination="FUp-Fi-ccl" id="q4L-bl-eRH"/>
                         <outlet property="tableView" destination="06F-8g-5Li" id="dsa-Qc-1fU"/>
                         <segue destination="zmX-A1-YOk" kind="show" identifier="overview" id="qmh-uC-ziC"/>
                     </connections>

@@ -10,50 +10,67 @@ import UIKit
 
 final class MovieHomeController: UIViewController {
     
-    @IBOutlet weak var segmentedControlOutlet: UISegmentedControl!
+//    @IBOutlet weak var segmentedControlOutlet: UISegmentedControl!
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var button0: UIButton!
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
     
     private var movieListViewModel: MovieListViewModel!
     private var serviceManager = ServiceManager()
     private var sendOverview = String()
     private var sendPosterPath = String()
+    private var lastSelected = "0"
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         serviceManager.delegate = self
-        
-        if let boldFont = UIFont(name: "Helvetica-Bold", size: 16.0){
-            segmentedControlOutlet.setTitleTextAttributes([NSAttributedString.Key.font: boldFont], for: .normal)
-        }
-        
+        button0.isSelected = true
+       
         serviceManager.getDiscoverMovies()
         
         tableView.delegate = self
         tableView.dataSource = self
     }
     
-    
-    @IBAction func segmentedControl(_ sender: UISegmentedControl) {
-        let index = segmentedControlOutlet.selectedSegmentIndex
+    @IBAction func buttonsTapped(_ sender: UIButton) {
+        guard let id = sender.restorationIdentifier else {print("Restoration id of button is nil"); return}
+        isButtonSelected(sender)
         
-        switch index {
-        case 0:
+        if lastSelected == id {
+            return
+        }
+        lastSelected = id
+        
+        switch id {
+        case "0":
             scrollView.contentOffset = CGPoint(x: 0, y: 0)
             serviceManager.getDiscoverMovies()
-        case 1:
-            scrollView.contentOffset = CGPoint(x: 40, y: 0)
+        case "1":
+            scrollView.contentOffset = CGPoint(x: 0, y: 0)
             serviceManager.getDiscoverTVs()
-        case 2:
-            scrollView.contentOffset = CGPoint(x: 140, y: 0)
+        case "2":
+            scrollView.contentOffset = CGPoint(x: 120, y: 0)
             serviceManager.getTopRatedMovies()
-        case 3:
-            scrollView.contentOffset = CGPoint(x: 250, y: 0)
+        case "3":
+            scrollView.contentOffset = CGPoint(x: 180, y: 0)
             serviceManager.getTopRatedTV()
         default:
-            print("")
+            print("The Restoration ID: \(id). It is not defined.")
         }
+    }
+    
+    func isButtonSelected(_ button: UIButton) {
+        button0.isSelected = false
+        button1.isSelected = false
+        button2.isSelected = false
+        button3.isSelected = false
+        
+        button.isSelected = !button.isSelected
     }
 }
 
