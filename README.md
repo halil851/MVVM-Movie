@@ -5,7 +5,7 @@
     * MVVM Design Pattern
     * UIKit
     * Storyboard
-    * UISegmentedControl
+    * SegmentedControl with UIButtons
     * API from https://www.themoviedb.org
 
 
