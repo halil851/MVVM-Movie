@@ -77,10 +77,10 @@ struct ServiceManager {
             let decodedData = try decoder.decode(MoviesModel.self, from: data)
             
             for movie in decodedData.results {
-                let title = movie.title ?? movie.name ?? ""
+                let title = movie.title ?? movie.name ?? "No Data"
                 let id = movie.id
                 let posterPath = movie.poster_path
-                let releasedDate = movie.release_date ?? movie.first_air_date ?? ""
+                let releasedDate = movie.release_date ?? movie.first_air_date ?? "No Data"
                 let overview = movie.overview
                 let voteAverage = movie.vote_average
                 

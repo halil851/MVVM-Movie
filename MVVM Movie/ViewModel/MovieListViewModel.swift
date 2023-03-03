@@ -14,11 +14,6 @@ struct MovieListViewModel {
         return movieList.count
     }
     
-//     func movieAtIndex(_ index: Int) -> MovieViewModel{
-//     let movie = movieList[index]
-//         return MovieListViewModel(movies: movie)
-//     }
-     
 }
 
 struct MovieViewModel {
@@ -28,39 +23,5 @@ struct MovieViewModel {
     let releaseDate: String
     let overview: String
     let voteAverage: Double
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  
-       /* var title: String {
-            guard let movieTitle = movies.title else {return movies.name ?? ""}
-            return movieTitle
-            
-        }
-        
-        var overview: String {
-            return movies.overview
-        }
-        
-        var posterPath: String {
-            return movies.poster_path
-        }
-        
-        var voteAverage: Double {
-            return movies.vote_average
-        } */
-    
+ 
 }
