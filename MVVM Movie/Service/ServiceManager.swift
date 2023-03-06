@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol ServiceManagerDelegate {
-    func getData(movie: [MovieViewModel])
-}
-
 struct ServiceManager {
     
     var delegate: ServiceManagerDelegate?

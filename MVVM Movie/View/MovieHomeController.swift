@@ -10,7 +10,6 @@ import UIKit
 
 final class MovieHomeController: UIViewController {
     
-//    @IBOutlet weak var segmentedControlOutlet: UISegmentedControl!
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var button0: UIButton!
@@ -40,6 +39,8 @@ final class MovieHomeController: UIViewController {
     @IBAction func buttonsTapped(_ sender: UIButton) {
         guard let id = sender.restorationIdentifier else {print("Restoration id of button is nil"); return}
         isButtonSelected(sender)
+        tableView.contentOffset = CGPoint(x: 0, y: 0)
+        scrollView.contentOffset = CGPoint(x: 0, y: 0)
         
         if lastSelected == id {
             return
@@ -48,10 +49,8 @@ final class MovieHomeController: UIViewController {
         
         switch id {
         case "0":
-            scrollView.contentOffset = CGPoint(x: 0, y: 0)
             serviceManager.getDiscoverMovies()
         case "1":
-            scrollView.contentOffset = CGPoint(x: 0, y: 0)
             serviceManager.getDiscoverTVs()
         case "2":
             scrollView.contentOffset = CGPoint(x: 120, y: 0)
@@ -60,8 +59,9 @@ final class MovieHomeController: UIViewController {
             scrollView.contentOffset = CGPoint(x: 180, y: 0)
             serviceManager.getTopRatedTV()
         default:
-            print("The Restoration ID: \(id). It is not defined.")
+            print("The Restoration ID: \(id), It is not defined to a button.")
         }
+        
     }
     
     func isButtonSelected(_ button: UIButton) {
@@ -84,11 +84,11 @@ extension MovieHomeController: UITableViewDelegate, UITableViewDataSource {
         }
         
         let movie = movieListViewModel.movieList[indexPath.row]
+        serviceManager.getImages(with: movie.posterPath, to: cell.moviePoster, resolution: .low)
+        
         cell.movieNameLabel.text = movie.title
         cell.releasedDate.text = movie.releaseDate
         cell.voteAverage.text = "Vote Average: \(movie.voteAverage)"
-        
-        serviceManager.getImages(with: movie.posterPath, to: cell.moviePoster, resolution: .low)
         
         return cell
     }

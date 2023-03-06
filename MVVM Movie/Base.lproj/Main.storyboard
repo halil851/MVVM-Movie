@@ -94,31 +94,39 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="0" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4A-Ye-6gG">
-                                                <rect key="frame" x="0.0" y="12" width="140.33333333333334" height="36"/>
+                                                <rect key="frame" x="0.0" y="12" width="145" height="36"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Movie Discover"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Movie Discover">
+                                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="buttonsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2yL-8X-FfB"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Bp-Av-hCT">
-                                                <rect key="frame" x="148" y="12" width="116.33333333333331" height="36"/>
+                                                <rect key="frame" x="152.66666666666666" y="12" width="119.66666666666666" height="36"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="TV Discover"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="TV Discover">
+                                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="buttonsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Bh-LI-qgv"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avp-Sb-7Sk">
-                                                <rect key="frame" x="272" y="12" width="152" height="36"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Movie Top Rated"/>
+                                                <rect key="frame" x="280" y="12" width="155.66666666666663" height="36"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Movie Top Rated">
+                                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="buttonsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YI3-Bj-WAr"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7n-Sd-qcQ">
-                                                <rect key="frame" x="432" y="12" width="127" height="36"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="TV Top Rated"/>
+                                                <rect key="frame" x="443.66666666666669" y="12" width="130.33333333333331" height="36"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="TV Top Rated">
+                                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="buttonsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b0f-ov-jh7"/>
                                                 </connections>
