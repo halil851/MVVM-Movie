@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ServiceManagerDelegate {
+protocol ServiceManagerDelegate: AnyObject {
     func getData(movie: [MovieViewModel])
     
 }
