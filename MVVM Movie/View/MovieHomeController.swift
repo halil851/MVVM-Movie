@@ -41,7 +41,7 @@ final class MovieHomeController: UIViewController {
     
     @IBAction func buttonsTapped(_ sender: UIButton) {
         guard let id = sender.restorationIdentifier else {print("Restoration id of button is nil"); return}
-        isButtonSelected(sender)
+        buttonSelectManager(sender)
         tableView.contentOffset = CGPoint(x: 0, y: 0)
         scrollView.contentOffset = CGPoint(x: 0, y: 0)
         
@@ -67,7 +67,7 @@ final class MovieHomeController: UIViewController {
         
     }
     
-    func isButtonSelected(_ button: UIButton) {
+    func buttonSelectManager(_ button: UIButton) {
         button0.isSelected = false
         button1.isSelected = false
         button2.isSelected = false

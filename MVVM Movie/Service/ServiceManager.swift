@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class ServiceManager {
     
     weak var delegate: ServiceManagerDelegate?

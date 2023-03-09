@@ -42,6 +42,8 @@ class MovieListViewModel {
         image.downloaded(from: imageURL, contentMode: .scaleAspectFill)
     }
     
+    
+    
 }
 
 struct MovieViewModel {
