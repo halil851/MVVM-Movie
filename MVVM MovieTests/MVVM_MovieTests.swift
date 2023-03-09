@@ -49,7 +49,6 @@ final class MVVM_MovieTests: XCTestCase {
 }
 
 class MockMovieViewModelDelegate: MovieListViewModelDelegate {
-    let ss = "ss"
     
     func viewDatas(movie: [MVVM_Movie.MovieViewModel]) {
         updateView = movie

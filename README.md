@@ -7,6 +7,7 @@
     * Storyboard
     * SegmentedControl with UIButtons
     * API from https://www.themoviedb.org
+    * Unit Tests
 
 
 ## Screens
