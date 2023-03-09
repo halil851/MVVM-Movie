@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ServiceManagerDelegate: AnyObject {
-    func getData(movie: [MovieViewModel])
+    func getData(movie: [Result]?)
     
 }
 

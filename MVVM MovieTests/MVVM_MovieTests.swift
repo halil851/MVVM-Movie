@@ -8,22 +8,22 @@
 import XCTest
 @testable import MVVM_Movie
 
-var updateViewArray: [[MovieViewModel]]? = []
+private var updateView: [MovieViewModel]?
 
 
 final class MVVM_MovieTests: XCTestCase {
     
     
-    private var delegate: MocMovieService!
     private var serviceManager : ServiceManager!
+    private var movieMockViewModel = MovieListViewModel()
+    private var delegate: MockMovieViewModelDelegate!
     
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        
         serviceManager = ServiceManager()
-        delegate = MocMovieService()
-        serviceManager.delegate = delegate
+        delegate = MockMovieViewModelDelegate()
+        movieMockViewModel.delegate = delegate
         
     }
 
@@ -33,41 +33,26 @@ final class MVVM_MovieTests: XCTestCase {
     }
 
     func testUpdateView_whenAPISuccess_showsSomething() throws {
-        let mockMovie = MovieViewModel(title: "Game of Thrones", id: 2, posterPath: "", releaseDate: "", overview: "", voteAverage: 7.8)
+        let mockMovie = Result(id: 0, overview: "", poster_path: "", release_date: "", first_air_date: "", title: "Game of Thrones", name: "Game of Thrones", vote_average: 0.0)
         
-        serviceManager.delegate?.getData(movie: [mockMovie])
+        movieMockViewModel.getData(movie: [mockMovie])
         
-        XCTAssertEqual(updateViewArray?.first?.first?.title, "Game of Thrones")
+        XCTAssertEqual(updateView?.first?.title, "Game of Thrones")
     }
 
     func testUpdateView_whenAPIFailure_showsSomething() throws {
-        
+
+        movieMockViewModel.getData(movie: nil)
+        XCTAssertEqual(updateView?.first?.title, "No Data")
     }
 
 }
-
-
-class MocMovieService: ServiceManagerDelegate {
-    private var mockMovieViewModelDelegate = MockMovieViewModelDelegate()
-    weak var delegate: MovieListViewModelDelegate?
-    
-    init(delegate: MovieListViewModelDelegate? = nil) {
-        self.delegate = mockMovieViewModelDelegate
-        
-    }
-    
-    func getData(movie: [MVVM_Movie.MovieViewModel]) {
-        delegate?.viewDatas(movie: movie)
-    }
-    
-    
-}
-
 
 class MockMovieViewModelDelegate: MovieListViewModelDelegate {
+    let ss = "ss"
     
     func viewDatas(movie: [MVVM_Movie.MovieViewModel]) {
-        updateViewArray?.append(movie)
+        updateView = movie
     }
 
 }

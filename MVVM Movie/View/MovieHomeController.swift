@@ -87,8 +87,9 @@ extension MovieHomeController: UITableViewDelegate, UITableViewDataSource {
         }
         
         let movie = movieList[indexPath.row]
+            
         movieListViewModel.getImages(with: movie.posterPath, to: cell.moviePoster, resolution: .low)
-        
+
         cell.movieNameLabel.text = movie.title
         cell.releasedDate.text = movie.releaseDate
         cell.voteAverage.text = "Vote Average: \(movie.voteAverage)"
@@ -122,13 +123,13 @@ extension MovieHomeController: UITableViewDelegate, UITableViewDataSource {
 
 
 extension MovieHomeController: MovieListViewModelDelegate {
+  
     func viewDatas(movie: [MovieViewModel]) {
         movieList = movie
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
-    
     
 }
 
