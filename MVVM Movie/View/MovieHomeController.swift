@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 final class MovieHomeController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -17,28 +16,32 @@ final class MovieHomeController: UIViewController {
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
     
-    private var movieListViewModel: MovieListViewModel!
-    private var serviceManager = ServiceManager()
+    private var movieListViewModel = MovieListViewModel()
+    private var movieList = [MovieViewModel]()
+    
     private var sendOverview = String()
     private var sendPosterPath = String()
     private var lastSelected = "0"
+    
+   
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        serviceManager.delegate = self
-        button0.isSelected = true
-       
-        serviceManager.getDiscoverMovies()
         
+        movieListViewModel.delegate = self
+        button0.isSelected = true
+        
+        movieListViewModel.getDiscoverMovies()
+
         tableView.delegate = self
         tableView.dataSource = self
     }
     
     @IBAction func buttonsTapped(_ sender: UIButton) {
         guard let id = sender.restorationIdentifier else {print("Restoration id of button is nil"); return}
-        isButtonSelected(sender)
+        buttonSelectManager(sender)
         tableView.contentOffset = CGPoint(x: 0, y: 0)
         scrollView.contentOffset = CGPoint(x: 0, y: 0)
         
@@ -49,22 +52,22 @@ final class MovieHomeController: UIViewController {
         
         switch id {
         case "0":
-            serviceManager.getDiscoverMovies()
+            movieListViewModel.getDiscoverMovies()
         case "1":
-            serviceManager.getDiscoverTVs()
+            movieListViewModel.getDiscoverTVs()
         case "2":
             scrollView.contentOffset = CGPoint(x: 120, y: 0)
-            serviceManager.getTopRatedMovies()
+            movieListViewModel.getTopRatedMovies()
         case "3":
             scrollView.contentOffset = CGPoint(x: 180, y: 0)
-            serviceManager.getTopRatedTV()
+            movieListViewModel.getTopRatedTV()
         default:
             print("The Restoration ID: \(id), It is not defined to a button.")
         }
         
     }
     
-    func isButtonSelected(_ button: UIButton) {
+    func buttonSelectManager(_ button: UIButton) {
         button0.isSelected = false
         button1.isSelected = false
         button2.isSelected = false
@@ -83,9 +86,10 @@ extension MovieHomeController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let movie = movieListViewModel.movieList[indexPath.row]
-        serviceManager.getImages(with: movie.posterPath, to: cell.moviePoster, resolution: .low)
-        
+        let movie = movieList[indexPath.row]
+            
+        movieListViewModel.getImages(with: movie.posterPath, to: cell.moviePoster, resolution: .low)
+
         cell.movieNameLabel.text = movie.title
         cell.releasedDate.text = movie.releaseDate
         cell.voteAverage.text = "Vote Average: \(movie.voteAverage)"
@@ -94,13 +98,14 @@ extension MovieHomeController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return movieListViewModel == nil ? 0 : movieListViewModel.movieList.count
+        return movieList.count
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        sendOverview = movieListViewModel.movieList[indexPath.row].overview
-        sendPosterPath = movieListViewModel.movieList[indexPath.row].posterPath
+        sendOverview = movieList[indexPath.row].overview
+        sendPosterPath = movieList[indexPath.row].posterPath
         
         performSegue(withIdentifier: "overview", sender: self)
     }
@@ -115,18 +120,22 @@ extension MovieHomeController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension MovieHomeController: ServiceManagerDelegate{
-    internal func getData(movie: [MovieViewModel]) {
-        
-        movieListViewModel = MovieListViewModel(movieList: movie)
-        
+
+
+extension MovieHomeController: MovieListViewModelDelegate {
+  
+    func viewDatas(movie: [MovieViewModel]) {
+        movieList = movie
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-        
     }
     
 }
+
+
+
+
 
 
 

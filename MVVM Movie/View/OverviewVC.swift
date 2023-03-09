@@ -24,7 +24,7 @@ class OverviewVC: UIViewController {
             overviewLabel.text = overview
         }
         
-        ServiceManager().getImages(with: posterPath, to: imageView, resolution: .medium)
+        MovieListViewModel().getImages(with: posterPath, to: imageView, resolution: .medium)
     }
     
 

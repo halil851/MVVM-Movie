@@ -12,14 +12,14 @@ struct MoviesModel: Decodable {
 }
 
 struct Result: Decodable {
-    let id: Int
-    let overview: String
-    let poster_path: String
+    let id: Int?
+    let overview: String?
+    let poster_path: String?
     let release_date: String?
     let first_air_date: String?
     let title: String?
     let name: String?
-    let vote_average: Double
+    let vote_average: Double?
     
 }
 
